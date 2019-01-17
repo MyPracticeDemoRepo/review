@@ -1,0 +1,61 @@
+---
+title: "Review"
+author: "Your Name"
+date: "1/17/2019"
+output: bookdown::html_document2
+bibliography: packages.bib
+---
+
+```{r, label = "setup", include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, comment = NA, error = FALSE, fig.align = "center")
+```
+
+```{r, echo = FALSE, results = "hide"}
+PackagesUsed <- c("bookdown")
+# Write bib information
+knitr::write_bib(PackagesUsed, file = "./packages.bib")
+# Load packages
+lapply(PackagesUsed, library, character.only = TRUE)
+```
+
+# R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r, label = "cars"}
+summary(cars)
+```
+
+## Including Plots {#plots}
+
+You can also embed plots, for example:
+
+```{r, label = "pressure", echo = FALSE}
+plot(pressure, col = "blue", pch = 19)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+_________
+
+## Including Mathematics
+
+
+The equation for the sample mean ($\bar{x}$) is given in Equation \@ref(eq:mean).  After Equation  \@ref(eq:mean), insert a code chunk that recreates the plot from Section \@ref(plots) but change the plotting character color to red and add a descriptive figure caption.
+
+\begin{equation}
+\bar{x} = \sum_{i=1}^n \frac{x_i}{n}
+(\#eq:mean)
+\end{equation}
+
+```{r, label = "plots2", fig.cap = "Your descriptive figure caption"}
+plot(pressure, col = "red", pch = 19)
+```
+
+__________
+
+This document uses `bookdown` written by @R-bookdown.
+
+## References
